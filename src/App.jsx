@@ -41,8 +41,11 @@ const aboutHighlights = [
 
 const portfolioProperties = [
   { title: "3050 Artesian Drive", city: "Mississauga, Ontario", type: "Commercial Plaza", image: "/images/3050-artesian.png" },
-  { title: "3955 Erin Centre Blvd", city: "Mississauga, Ontario", type: "Residential / Mixed-Use", image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80" },
-  { title: "2292 Dundas Street West", city: "Mississauga, Ontario", type: "Commercial / Plaza", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" },
+{ title: "3955 Erin Centre Blvd", city: "Mississauga, Ontario", type: "Retail Plaza", image: "/images/3955-erin-centre.png" },
+
+{ title: "2292 Dundas Street West", city: "Mississauga, Ontario", type: "Automotive Commercial", image: "/images/2292-dundas.png" },
+
+{ title: "295 Eglinton Avenue East", city: "Mississauga, Ontario", type: "Commercial Plaza", image: "/images/295-eglinton.png" },
   { title: "295 Eglinton Avenue East", city: "Mississauga, Ontario", type: "Residential Building", image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80" },
 ];
 
