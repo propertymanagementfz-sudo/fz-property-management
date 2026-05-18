@@ -1,109 +1,44 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Building2, Home, Factory, KeyRound, Wrench, FileText, DollarSign, Phone, Mail, MapPin, CheckCircle2, ShieldCheck, ClipboardList, Handshake, BriefcaseBusiness, BadgeCheck, Megaphone, Search, DoorOpen, Scale, Car, AlertTriangle, FileSignature } from "lucide-react";
-
-const Card = ({ children, className = "" }) => <div className={className}>{children}</div>;
-const CardContent = ({ children, className = "" }) => <div className={className}>{children}</div>;
-const Button = ({ children, className = "", variant, type = "button" }) => (
-  <button type={type} className={`${variant === "outline" ? "bg-white text-slate-900" : "text-white"} ${className}`}>{children}</button>
-);
-
-const services = [
-  { icon: Building2, title: "Full Property Management", text: "Hands-on management for landlords and investors who want their property occupied, organized, and professionally operated." },
-  { icon: Megaphone, title: "Vacancy Advertising & Marketing", text: "Market vacant units with clear rental positioning, strong listing details, and practical exposure to attract qualified tenants." },
-  { icon: Search, title: "Tenant Placement & Screening", text: "Coordinate showings, review applications, screen tenants, and help owners make informed leasing decisions." },
-  { icon: FileSignature, title: "Leasing & Lease Agreements", text: "Support leasing, showings, offer coordination, lease preparation, and move-in documentation." },
-  { icon: DollarSign, title: "Rent Collection & Arrears Follow-Up", text: "Organized rent collection, payment tracking, arrears communication, and owner reporting to keep cash flow consistent." },
-  { icon: Wrench, title: "Maintenance Coordination", text: "Manage tenant repair requests, coordinate vendors, obtain quotes, supervise work, and follow up until completion." },
-  { icon: DoorOpen, title: "Vacancy Turnovers", text: "Coordinate move-out inspections, cleaning, repairs, turnover work, and preparation for the next tenant." },
-  { icon: FileText, title: "Landlord Notice Support", text: "Prepare and serve required notices such as N4, N1, N11, entry notices, and other landlord documentation support." },
-  { icon: Scale, title: "L1 Applications & LTB Support", text: "Draft L1 application packages and attend LTB hearings with landlords to help keep files organized and professionally presented." },
-  { icon: Car, title: "Parking Enforcement & Tow Coordination", text: "Assist with parking issues, unauthorized vehicles, communication, documentation, and towing coordination where applicable." },
-  { icon: ClipboardList, title: "Inspections & Property Reporting", text: "Routine inspections, condition reports, photo documentation, maintenance recommendations, and owner updates." },
-  { icon: ShieldCheck, title: "Owner Protection & Compliance", text: "Help owners stay organized with documentation, notices, maintenance records, and practical property management processes." },
-];
-
-const propertyTypes = [
-  { icon: Home, title: "Condos & Houses", text: "Condo units, townhomes, detached homes, and single-family rental properties.", image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=80" },
-  { icon: KeyRound, title: "Duplexes & Multiplexes", text: "Duplexes, triplexes, fourplexes, and small multi-unit residential assets.", image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" },
-  { icon: Building2, title: "Apartment Buildings", text: "Multi-residential rental buildings requiring organized tenant, rent, and maintenance systems.", image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=900&q=80" },
-  { icon: Building2, title: "Mixed-Use Properties", text: "Properties with residential and commercial tenants requiring balanced management support.", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" },
-  { icon: Factory, title: "Industrial Properties", text: "Light industrial, warehouse, and service-based properties with practical operational needs.", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80" },
-  { icon: Building2, title: "Commercial Plazas", text: "Retail plazas, small commercial buildings, and owner-investor commercial assets.", image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" },
-];
-
-const painPoints = ["Late rent payments", "Difficult tenants", "Maintenance headaches", "Parking problems", "Vacant units sitting too long", "Constant calls and paperwork"];
-const aboutHighlights = [
-  { icon: BriefcaseBusiness, title: "Property Management Since 2019", text: "Hands-on experience managing rental operations, repairs, tenant communication, and owner reporting." },
-  { icon: BadgeCheck, title: "Licensed Real Estate Brokers", text: "Fadi and Ziyad bring real estate market knowledge, negotiation skills, leasing experience, and investment-focused thinking." },
-  { icon: Handshake, title: "Owner-First Service", text: "We focus on protecting your property, reducing stress, improving communication, and keeping day-to-day operations organized." },
-];
-
 const portfolioProperties = [
-  { title: "3050 Artesian Drive", city: "Mississauga, Ontario", type: "Commercial Plaza", image: "/images/3050-artesian.png" },
-  { title: "3955 Erin Centre Blvd", city: "Mississauga, Ontario", type: "Residential / Mixed-Use", image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80" },
-  { title: "2292 Dundas Street West", city: "Mississauga, Ontario", type: "Commercial / Plaza", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" },
-  { title: "295 Eglinton Avenue East", city: "Mississauga, Ontario", type: "Residential Building", image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80" },
+  {
+    title: "3050 Artesian Drive",
+    city: "Mississauga, Ontario",
+    type: "Commercial Plaza",
+    image: "/images/3050-artesian.png"
+  },
+  {
+    title: "3955 Erin Centre Blvd",
+    city: "Mississauga, Ontario",
+    type: "Retail Plaza",
+    image: "/images/3955-erin-centre.png"
+  },
+  {
+    title: "295 Eglinton Avenue East",
+    city: "Mississauga, Ontario",
+    type: "Commercial Plaza",
+    image: "/images/295-eglinton.png"
+  },
+  {
+    title: "2211 Brant Street",
+    city: "Burlington, Ontario",
+    type: "Retail Property",
+    image: "/images/2211-brant.png"
+  },
+  {
+    title: "2292 Dundas Street West",
+    city: "Mississauga, Ontario",
+    type: "Automotive Commercial",
+    image: "/images/2292-dundas.png"
+  },
+  {
+    title: "310 Kenilworth Avenue North",
+    city: "Hamilton, Ontario",
+    type: "Industrial Yard",
+    image: "/images/310-kenilworth.png"
+  },
+  {
+    title: "297 Queenston Road",
+    city: "Hamilton, Ontario",
+    type: "Commercial Automotive",
+    image: "/images/297-queenston.png"
+  }
 ];
-
-const steps = ["Initial property review and management needs assessment", "Tenant, lease, rent, and maintenance file setup", "Ongoing rent collection, inspections, repairs, and reporting", "Notice preparation and documentation support when needed"];
-
-export default function App() {
-  return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
-      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-900 text-white shadow-sm"><Building2 className="h-6 w-6" /></div>
-            <div><p className="text-lg font-bold tracking-tight">FZ Property Management</p><p className="text-xs text-slate-500">Residential • Commercial • Industrial</p></div>
-          </div>
-          <nav className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
-            <a href="#about" className="hover:text-slate-950">About</a><a href="#services" className="hover:text-slate-950">Services</a><a href="#properties" className="hover:text-slate-950">Property Types</a><a href="#portfolio" className="hover:text-slate-950">Portfolio</a><a href="#process" className="hover:text-slate-950">Process</a><a href="#contact" className="hover:text-slate-950">Contact</a>
-          </nav>
-          <Button className="rounded-2xl bg-slate-900 px-5 py-3 hover:bg-slate-800">Get a Quote</Button>
-        </div>
-      </header>
-
-      <main>
-        <section className="relative overflow-hidden bg-white">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(15,23,42,0.12),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(100,116,139,0.15),transparent_35%)]" />
-          <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
-            <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-              <div className="mb-5 inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700">Ontario landlords & property investors</div>
-              <h1 className="text-4xl font-bold tracking-tight text-slate-950 md:text-6xl">Owning rental property shouldn’t feel like a second full-time job.</h1>
-              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">FZ Property Management is a team of real estate professionals providing hands-on property management and leasing services across Ontario. We help landlords and investors keep their properties occupied, organized, and professionally managed.</p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row"><Button className="rounded-2xl bg-slate-900 px-7 py-4 text-base hover:bg-slate-800">Request Management Services</Button><Button variant="outline" className="rounded-2xl border border-slate-300 px-7 py-4 text-base">View Services</Button></div>
-              <div className="mt-8 grid gap-3 text-sm text-slate-600 sm:grid-cols-3">{["Full management", "Leasing & screening", "LTB support"].map((item) => <div key={item} className="flex items-center gap-2"><CheckCircle2 className="h-5 w-5 text-slate-900" /><span>{item}</span></div>)}</div>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.1 }}>
-              <div className="relative overflow-hidden rounded-[2rem] shadow-2xl ring-1 ring-slate-200"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80" alt="Modern residential property managed by FZ Property Management" className="h-[520px] w-full object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/35 to-transparent" /><div className="absolute bottom-0 left-0 right-0 p-8 text-white md:p-10"><p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-200">Owner Dashboard</p><h2 className="mt-3 text-3xl font-bold">Full-service management for serious property owners.</h2><div className="mt-6 grid gap-3 sm:grid-cols-2">{["Vacancy marketing", "Tenant screening", "Rent & arrears tracking", "N4, N1, N11 support"].map((item) => <div key={item} className="rounded-2xl bg-white/15 p-4 text-sm font-medium backdrop-blur">{item}</div>)}</div></div></div>
-            </motion.div>
-          </div>
-        </section>
-
-        <section id="about" className="mx-auto max-w-7xl px-6 py-20">
-          <div className="grid gap-12 md:grid-cols-2 md:items-center">
-            <div className="relative overflow-hidden rounded-[2rem] shadow-xl ring-1 ring-slate-200"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80" alt="FZ Property Management team meeting with property owners" className="h-[520px] w-full object-cover" /><div className="absolute bottom-5 left-5 right-5 rounded-3xl bg-white/90 p-5 shadow-lg backdrop-blur"><p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Led by Fadi & Ziyad</p><p className="mt-2 text-xl font-bold text-slate-950">Property managers and real estate brokers serving owners across the GTA.</p></div></div>
-            <div><p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">About Us</p><h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Experienced property managers with real estate market knowledge.</h2><p className="mt-5 text-lg leading-8 text-slate-600">FZ Property Management is operated by Fadi and Ziyad, two property managers who have been working in property management since 2019. We also work as real estate brokers, giving our clients a stronger understanding of rental value, leasing strategy, tenant selection, negotiation, and long-term property performance.</p><p className="mt-4 text-lg leading-8 text-slate-600">Our goal is to help property owners protect their investment, reduce daily stress, and keep their rental operation organized. We support owners with full property management, vacancy advertising, tenant placement and screening, showings, lease agreements, rent collection, arrears follow-up, repairs, turnovers, compliance support, LTB notice preparation, L1 application drafting, hearing attendance support, and parking enforcement coordination.</p><div className="mt-8 grid gap-4">{aboutHighlights.map((item) => { const Icon = item.icon; return <div key={item.title} className="flex gap-4 rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-200"><div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-slate-900 text-white"><Icon className="h-6 w-6" /></div><div><h3 className="font-bold text-slate-950">{item.title}</h3><p className="mt-1 leading-7 text-slate-600">{item.text}</p></div></div> })}</div></div>
-          </div>
-        </section>
-
-        <section id="properties" className="mx-auto max-w-7xl px-6 py-20"><div className="max-w-3xl"><p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">Property Types</p><h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Management for different asset classes</h2><p className="mt-4 text-lg leading-8 text-slate-600">Whether you own one rental home or a mixed portfolio, FZ Property Management provides structured support to protect your investment and reduce day-to-day stress.</p></div><div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">{propertyTypes.map((item) => { const Icon = item.icon; return <Card key={item.title} className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"><img src={item.image} alt={`${item.title} property`} className="h-44 w-full object-cover" /><CardContent className="p-6"><div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100"><Icon className="h-6 w-6 text-slate-900" /></div><h3 className="text-xl font-bold">{item.title}</h3><p className="mt-3 leading-7 text-slate-600">{item.text}</p></CardContent></Card> })}</div></section>
-
-        <section id="portfolio" className="bg-white py-20"><div className="mx-auto max-w-7xl px-6"><div className="max-w-3xl"><p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">Current Portfolio</p><h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Properties currently under management</h2><p className="mt-4 text-lg leading-8 text-slate-600">FZ Property Management currently manages a growing portfolio of residential, mixed-use, and commercial properties across Mississauga and the Greater Toronto Area.</p></div><div className="mt-12 grid gap-8 md:grid-cols-2">{portfolioProperties.map((property) => <Card key={property.title} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"><div className="relative"><img src={property.image} alt={property.title} className="h-72 w-full object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent" /><div className="absolute bottom-0 left-0 right-0 p-6 text-white"><div className="inline-flex rounded-full bg-white/20 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] backdrop-blur">{property.type}</div><h3 className="mt-3 text-2xl font-bold">{property.title}</h3><p className="mt-1 text-slate-200">{property.city}</p></div></div></Card>)}</div></div></section>
-
-        <section id="services" className="bg-white py-20"><div className="mx-auto max-w-7xl px-6"><div className="max-w-3xl"><p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">Services</p><h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Complete property management support</h2><p className="mt-4 text-lg leading-8 text-slate-600">We help landlords and investors with the practical work that takes time: vacancy marketing, tenant placement, leasing, rent collection, repairs, notices, compliance support, LTB preparation, inspections, turnovers, and parking issues.</p></div><div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">{services.map((service) => { const Icon = service.icon; return <Card key={service.title} className="rounded-3xl border border-slate-200 shadow-sm"><CardContent className="p-7"><div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-900 text-white"><Icon className="h-6 w-6" /></div><h3 className="text-xl font-bold">{service.title}</h3><p className="mt-3 leading-7 text-slate-600">{service.text}</p></CardContent></Card> })}</div></div></section>
-
-        <section className="bg-slate-950 py-20 text-white"><div className="mx-auto max-w-7xl px-6"><div className="grid gap-12 md:grid-cols-2 md:items-center"><div><p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-300">Landlord Problems We Solve</p><h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Tired of chasing rent, handling tenant issues, and managing repairs?</h2><p className="mt-5 text-lg leading-8 text-slate-300">Our team works to protect your investment, reduce stress, and keep your property running smoothly with professional systems, clear communication, and hands-on support.</p></div><div className="grid gap-4 sm:grid-cols-2">{painPoints.map((item) => <div key={item} className="flex items-center gap-3 rounded-2xl bg-white/10 p-5"><AlertTriangle className="h-5 w-5 text-white" /><span className="font-medium">{item}</span></div>)}</div></div></div></section>
-
-        <section id="process" className="mx-auto max-w-7xl px-6 py-20"><div className="grid gap-12 md:grid-cols-[0.9fr_1.1fr] md:items-start"><div><p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">Process</p><h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">A simple management process from day one</h2><p className="mt-4 text-lg leading-8 text-slate-600">We create an organized management structure so owners know what is happening, tenants know who to contact, and repairs or rent issues are handled professionally.</p></div><div className="space-y-4">{steps.map((step, index) => <div key={step} className="flex gap-5 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200"><div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-slate-900 font-bold text-white">{index + 1}</div><div><h3 className="text-lg font-bold">{step}</h3><p className="mt-2 text-slate-600">Designed to keep the property organized, compliant, and well maintained.</p></div></div>)}</div></div></section>
-
-        <section className="bg-slate-900 py-20 text-white"><div className="mx-auto max-w-7xl px-6"><div className="grid gap-10 md:grid-cols-2 md:items-center"><div><p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-300">Why FZ</p><h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Professional management with owner-focused communication.</h2><p className="mt-5 text-lg leading-8 text-slate-300">From rent collection to repairs and required notices, Fadi and Ziyad bring property management experience, real estate brokerage knowledge, and practical owner-focused communication to every property we manage.</p></div><div className="grid gap-4 sm:grid-cols-2">{["Clear owner updates", "Tenant issue management", "Vendor coordination", "Documentation support", "Maintenance tracking", "Rent collection follow-up"].map((item) => <div key={item} className="flex items-center gap-3 rounded-2xl bg-white/10 p-4"><CheckCircle2 className="h-5 w-5" /><span className="font-medium">{item}</span></div>)}</div></div></div></section>
-
-        <section id="contact" className="bg-white py-20"><div className="mx-auto max-w-7xl px-6"><div className="rounded-[2rem] bg-slate-50 p-8 ring-1 ring-slate-200 md:p-12"><div className="grid gap-10 md:grid-cols-2"><div><p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">Contact</p><h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Ready to discuss your property?</h2><p className="mt-4 text-lg leading-8 text-slate-600">Contact FZ Property Management to request a management quote for your residential, commercial, industrial, or multiplex property.</p><div className="mt-8 space-y-4 text-slate-700"><div className="flex items-center gap-3"><Phone className="h-5 w-5" /> <span>Phone: Add your phone number</span></div><div className="flex items-center gap-3"><Mail className="h-5 w-5" /> <span>Email: propertymanagement.fz@gmail.com</span></div><div className="flex items-center gap-3"><MapPin className="h-5 w-5" /> <span>Serving landlords and investors across Ontario, including Oakville, Burlington, Milton, Mississauga, Hamilton, and the GTA</span></div></div></div><Card className="rounded-3xl border border-slate-200 bg-white shadow-sm"><CardContent className="p-6"><form className="space-y-4"><input className="w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-slate-900" placeholder="Full name" /><input className="w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-slate-900" placeholder="Email address" /><input className="w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-slate-900" placeholder="Property address / city" /><input className="w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-slate-900" placeholder="Phone number" /><select className="w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-slate-900"><option>Property type</option><option>Residential</option><option>Commercial</option><option>Industrial</option><option>Multiplex</option><option>Apartment Building</option><option>Mixed-Use Property</option><option>Commercial Plaza</option></select><textarea className="min-h-32 w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-slate-900" placeholder="Tell us about your property and management needs" /><Button type="button" className="w-full rounded-2xl bg-slate-900 py-4 text-base hover:bg-slate-800">Submit Inquiry</Button></form><p className="mt-4 text-xs leading-5 text-slate-500">Note: This form is a website demo. Connect it to email, CRM, or a form platform before publishing.</p></CardContent></Card></div></div></div></section>
-      </main>
-
-      <footer className="border-t border-slate-200 bg-white px-6 py-8"><div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-slate-500 md:flex-row md:items-center md:justify-between"><p>© {new Date().getFullYear()} FZ Property Management. All rights reserved.</p><p>Professional property management for residential, commercial, industrial, and multiplex properties.</p></div></footer>
-    </div>
-  );
-}
