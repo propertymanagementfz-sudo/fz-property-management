@@ -41,7 +41,7 @@ const aboutHighlights = [
 
 const portfolioProperties = [
   { title: "3050 Artesian Drive", city: "Mississauga, Ontario", type: "Commercial Plaza", image: "/images/3050-artesian.png" },
-{ title: "3955 Erin Centre Blvd", city: "Mississauga, Ontario", type: "Retail Plaza", image: "/images/3955-erin-centre.png" },
+{ title: "3955 Erin Centre Blvd", city: "Mississauga, Ontario", type: "Commercial Plaza", image: "/images/3955-erin-centre.png" },
 
 { title: "2292 Dundas Street West", city: "Mississauga, Ontario", type: "Automotive Commercial", image: "/images/2292-dundas.png" },
 
